@@ -1,6 +1,6 @@
 runtime_resource_overlay {
-    name: "FrameworkResOverlayDabu",
-    theme: "FrameworkResOverlayDabu",
+    name: "SettingsOverlayPipa",
+    theme: "SettingsOverlayPipa",
     certificate: "platform",
     sdk_version: "current",
     product_specific: true

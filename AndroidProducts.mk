@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/arrow_dagu.mk
+    $(LOCAL_DIR)/arrow_pipa.mk
 
 COMMON_LUNCH_CHOICES := \
-    arrow_dagu-eng \
-    arrow_dagu-userdebug \
-    arrow_dagu-user
+    arrow_pipa-eng \
+    arrow_pipa-userdebug \
+    arrow_pipa-user

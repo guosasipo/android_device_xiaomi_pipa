@@ -4,9 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-$(call inherit-product, vendor/xiaomi/dagu/dagu-vendor.mk)
+$(call inherit-product, vendor/xiaomi/pipa/pipa-vendor.mk)
 
-DAGU_PREBUILT := device/xiaomi/dagu-prebuilt
+PIPA_PREBUILT := device/xiaomi/pipa-prebuilt
 
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
@@ -62,8 +62,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bluetooth/audio/config/sysbta_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysbta_audio_policy_configuration.xml
 
 # Boot animation
-TARGET_SCREEN_HEIGHT := 2400
-TARGET_SCREEN_WIDTH := 1080
+TARGET_SCREEN_HEIGHT := 2880
+TARGET_SCREEN_WIDTH := 1800
 
 # Boot control
 PRODUCT_PACKAGES += \
@@ -79,7 +79,7 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     init.recovery.usb.rc \
     init.recovery.qcom.sh \
-    init.dagu.rc
+    init.pipa.rc
 
 # Dex
 PRODUCT_DEX_PREOPT_DEFAULT_COMPILER_FILTER := everything
@@ -102,11 +102,11 @@ PRODUCT_PACKAGES += \
 
 # Kernel
 PRODUCT_COPY_FILES += \
-    $(DAGU_PREBUILT)/kernel/dtb.img:dtb.img
+    $(PIPA_PREBUILT)/kernel/dtb.img:dtb.img
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.dagu
+    android.hardware.lights-service.pipa
 
 # Parts
 PRODUCT_PACKAGES += \
@@ -118,11 +118,11 @@ PRODUCT_PACKAGES += \
 
 # RRO Overlays
 PRODUCT_PACKAGES += \
-    FrameworkResOverlayDabu \
-    WifiResOverlayDabu \
-    SystemUIOverlayDabu \
-    SettingsProviderOverlayDabu \
-    SettingsOverlayDabu
+    FrameworkResOverlayPipa \
+    WifiResOverlayPipa \
+    SystemUIOverlayPipa \
+    SettingsProviderOverlayPipa \
+    SettingsOverlayPipa
 
 # Overlays - override vendor ones
 PRODUCT_PACKAGES += \
@@ -140,7 +140,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.2
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.dagu
+    android.hardware.power-service.pipa
 
 # Properties
 include $(LOCAL_PATH)/properties/default.mk
